@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f8f6">
+  <title>Регистрация пациента — Здраво</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="account-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Здраво — главная"><span class="brand-mark" aria-hidden="true">+</span><span>здраво<span class="brand-dot">.</span></span></a>
+      <a class="text-link" href="/">На главную <span aria-hidden="true">→</span></a>
+    </div>
+  </header>
+  <main class="account-main">
+    <section class="account-card">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> Кабинет пациента</div>
+      <h1 class="account-title">Создать аккаунт</h1>
+      <p class="account-description">Зарегистрируйтесь, чтобы записываться к врачам и управлять визитами.</p>
+      <form class="account-form" id="patient-register-form" action="/api/patient/register" method="post">
+        <div class="form-row">
+          <label>Имя
+            <input type="text" name="first-name" placeholder="Ваше имя" autocomplete="given-name" maxlength="80" required>
+          </label>
+          <label>Фамилия
+            <input type="text" name="last-name" placeholder="Ваша фамилия" autocomplete="family-name" maxlength="80" required>
+          </label>
+        </div>
+        <label>Электронная почта
+          <input type="email" name="email" placeholder="you@example.ru" autocomplete="email" required>
+        </label>
+        <label>Телефон
+          <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" maxlength="40" required>
+        </label>
+        <label>Пароль
+          <input type="password" name="password" placeholder="Не менее 8 символов" autocomplete="new-password" minlength="8" maxlength="256" required>
+        </label>
+        <label class="consent"><input type="checkbox" name="consent" required><span>Я согласен(на) с обработкой персональных данных и условиями использования</span></label>
+        <p class="form-message" id="patient-auth-message" role="status" aria-live="polite" hidden></p>
+        <button class="button button-primary form-submit" type="submit">Зарегистрироваться <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="account-bottom">Уже есть аккаунт? <a href="/patient/login">Войти</a></p>
+    </section>
+  </main>
+  <script src="/patient.js" defer></script>
+</body>
+</html>

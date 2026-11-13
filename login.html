@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f8f6">
+  <title>Вход в кабинет — Здраво</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="account-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Здраво — главная"><span class="brand-mark" aria-hidden="true">+</span><span>здраво<span class="brand-dot">.</span></span></a>
+      <a class="text-link" href="/">На главную <span aria-hidden="true">→</span></a>
+    </div>
+  </header>
+  <main class="account-main">
+    <section class="account-card">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> Добро пожаловать</div>
+      <h1 class="account-title">Вход в кабинет</h1>
+      <p class="account-description">Войдите в личный кабинет врача на портале «Здраво».</p>
+      <form class="account-form" id="login-form" action="/api/login" method="post">
+        <label>Электронная почта
+          <input type="email" name="email" placeholder="doctor@example.ru" autocomplete="username" required>
+        </label>
+        <label>Пароль
+          <input type="password" name="password" placeholder="Введите пароль" autocomplete="current-password" required>
+        </label>
+        <p class="form-message" id="login-message" role="status" aria-live="polite" hidden></p>
+        <button class="button button-primary form-submit" type="submit">Войти в кабинет <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="account-bottom">Ещё нет кабинета врача? <a href="/#registration">Зарегистрироваться</a><br><br>Вы пациент? <a href="/patient/login">Войти в кабинет пациента</a></p>
+    </section>
+  </main>
+  <script src="/login.js" defer></script>
+</body>
+</html>

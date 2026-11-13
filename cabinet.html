@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f8f6">
+  <title>Личный кабинет врача — Здраво</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="account-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Здраво — главная"><span class="brand-mark" aria-hidden="true">+</span><span>здраво<span class="brand-dot">.</span></span></a>
+      <button class="logout-button" id="logout-button" type="button">Выйти <span aria-hidden="true">↗</span></button>
+    </div>
+  </header>
+  <main class="cabinet-main">
+    <div class="container">
+      <a class="back-link" href="/">← На главную</a>
+      <div class="cabinet-heading">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Личный кабинет врача</div>
+          <h1 class="cabinet-title">Здравствуйте, <span id="doctor-greeting">...</span></h1>
+          <p class="account-description">Здесь вы можете просматривать и обновлять информацию о себе.</p>
+        </div>
+        <div class="profile-avatar" id="profile-avatar" aria-hidden="true">+</div>
+      </div>
+      <section class="cabinet-panel doctor-appointments-panel">
+        <div class="panel-heading">
+          <div><h2>Записи пациентов</h2><p>Записи на приём к вам</p></div>
+          <span class="profile-badge"><i></i> <span id="pending-count">0 ожидают</span></span>
+        </div>
+        <div class="doctor-appointment-list" id="doctor-appointment-list">
+          <p class="empty-appointments">Загружаем записи...</p>
+        </div>
+        <p class="form-message" id="doctor-appointment-message" role="status" aria-live="polite" hidden></p>
+      </section>
+      <div class="cabinet-grid">
+        <section class="cabinet-panel profile-panel">
+          <div class="panel-heading">
+            <div><h2>Профиль врача</h2><p>Эти данные используются в вашем кабинете</p></div>
+            <span class="profile-badge"><i></i> Кабинет активен</span>
+          </div>
+          <form id="profile-form" class="account-form profile-form">
+            <div class="form-row">
+              <label>Имя
+                <input type="text" name="first_name" autocomplete="given-name" required maxlength="80">
+              </label>
+              <label>Фамилия
+                <input type="text" name="last_name" autocomplete="family-name" required maxlength="80">
+              </label>
+            </div>
+            <label>Специализация
+              <select name="specialty" required>
+                <option>Терапевт</option>
+                <option>Кардиолог</option>
+                <option>Педиатр</option>
+                <option>Невролог</option>
+                <option>Дерматолог</option>
+                <option>Эндокринолог</option>
+                <option>Офтальмолог</option>
+                <option>Другое направление</option>
+              </select>
+            </label>
+            <label>Электронная почта
+              <input type="email" name="email" readonly>
+            </label>
+            <label>Телефон
+              <input type="tel" name="phone" autocomplete="tel" required maxlength="40">
+            </label>
+            <p class="form-message" id="profile-message" role="status" aria-live="polite" hidden></p>
+            <button class="button button-primary profile-save" type="submit">Сохранить изменения <span aria-hidden="true">→</span></button>
+          </form>
+        </section>
+        <aside class="cabinet-side">
+          <section class="cabinet-panel status-panel">
+            <span class="side-icon" aria-hidden="true">✳</span>
+            <h2>Ваш профиль</h2>
+            <p>Личный кабинет создан. Убедитесь, что контактная информация актуальна.</p>
+            <div class="status-divider"></div>
+            <div class="status-row"><span>Специализация</span><strong id="side-specialty">—</strong></div>
+            <div class="status-row"><span>На портале с</span><strong id="member-since">—</strong></div>
+          </section>
+          <section class="cabinet-panel help-panel">
+            <span class="help-mark" aria-hidden="true">?</span>
+            <div><strong>Нужна помощь?</strong><p>По вопросам работы портала обратитесь в службу поддержки.</p></div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <script src="/cabinet.js" defer></script>
+</body>
+</html>
